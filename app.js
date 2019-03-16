@@ -10,17 +10,18 @@ app.use(express.static('public'));
 // set up mysql database
 var mysql = require('mysql');
 var pool = mysql.createPool({
-    host  : 'localhost',
-    user  : 'student',
-    password: 'default',
-    database: 'student',
-    dateStrings: 'true'
+    host            : 'classmysql.engr.oregonstate.edu',
+    user            : '[cs290_yourengrusername]',
+    password        : '[last-4-digits-of-your-osu-id]',
+    database        : '[cs290_yourengrusername]',
+    dateStrings     : 'true'
 });
+
 
 // set up handlebars and the port
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 7022);
 
 // root page
 app.get('/', function(req, res, next){
